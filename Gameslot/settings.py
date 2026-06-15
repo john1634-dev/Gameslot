@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-6bne2d#^)*1g4762$iyqlzchy7(1_vw63t8fzugl)dn6&*xl)k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://gameslot-production.up.railway.app"]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://gameslot-production.up.railway.app",
+]
 
 
 # Application definition
