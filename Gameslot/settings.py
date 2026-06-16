@@ -29,11 +29,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = [
-    origin.strip()
-    for origin in os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")
-    if origin.strip()
-]
+CSRF_TRUSTED_ORIGINS = os.getenv(
+    "CSRF_TRUSTED_ORIGINS",
+    ""
+).split(",")
 
 
 # Application definition
@@ -41,6 +40,7 @@ CSRF_TRUSTED_ORIGINS = [
 INSTALLED_APPS = [
     'simpleui',
     'slots',
+    "storages",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,13 +83,11 @@ WSGI_APPLICATION = 'Gameslot.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASE_URL = os.getenv('DATABASE_URL')
-
 DATABASES = {
     'default': dj_database_url.config(
-        default=DATABASE_URL or f'sqlite:///{BASE_DIR / "db.sqlite3"}',
+        default=os.getenv('DATABASE_URL'),
         conn_max_age=600,
-        ssl_require=bool(DATABASE_URL),
+        ssl_require=True,
     )
 }
 
@@ -140,3 +138,26 @@ SIMPLEUI_ANALYSIS = False
 SIMPLEUI_DEFAULT_THEME = 'admin.lte.css'
 SIMPLEUI_HOME_ACTION = False
 SIMPLEUI_LOGO = '/static/frontend/favicon.svg'
+SUPABASE_PROJECT_REF = "qdvnpaowvygrcpjutzxq"
+SUPABASE_STORAGE_BUCKET = "media"
+
+AWS_ACCESS_KEY_ID = os.getenv("dc21223effd0153386d31a874daaf3c0")
+AWS_SECRET_ACCESS_KEY = os.getenv("3a3db8659d1cf78512df709744fc8541d5556fee40b4561eb40f8e865fcd7341")
+AWS_STORAGE_BUCKET_NAME = SUPABASE_STORAGE_BUCKET
+AWS_S3_ENDPOINT_URL = os.getenv("https://qdvnpaowvygrcpjutzxq.storage.supabase.co/storage/v1/s3")
+AWS_S3_REGION_NAME = os.getenv("SUPABASE_S3_REGION_NAME", "ap-southeast-2")
+AWS_S3_SIGNATURE_VERSION = "s3v4"
+AWS_S3_ADDRESSING_STYLE = "path"
+AWS_QUERYSTRING_AUTH = False
+AWS_DEFAULT_ACL = None
+
+MEDIA_URL = f"https://{SUPABASE_PROJECT_REF}.supabase.co/storage/v1/object/public/{SUPABASE_STORAGE_BUCKET}/"
+
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3.S3Storage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
