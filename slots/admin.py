@@ -8,6 +8,12 @@ admin.site.site_title = 'Gameslot Admin'
 admin.site.index_title = 'Store Management'
 
 
+class ImagePasteAdminMixin:
+    class Media:
+        js = ('slots/admin/image_paste.js',)
+        css = {'all': ('slots/admin/image_paste.css',)}
+
+
 def image_source(image=None, external_url=''):
     if image:
         return image.url
@@ -37,7 +43,7 @@ def unpublish_items(modeladmin, request, queryset):
 
 
 @admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(ImagePasteAdminMixin, admin.ModelAdmin):
     list_display = ('cover_preview', 'name', 'slug', 'badge', 'product_count', 'accent_color', 'is_active', 'sort_order')
     list_filter = ('is_active',)
     search_fields = ('name', 'badge', 'subtitle')
@@ -106,7 +112,7 @@ def mark_available(modeladmin, request, queryset):
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(ImagePasteAdminMixin, admin.ModelAdmin):
     list_display = (
         'cover_preview',
         'title',
@@ -156,7 +162,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 @admin.register(SiteSetting)
-class SiteSettingAdmin(admin.ModelAdmin):
+class SiteSettingAdmin(ImagePasteAdminMixin, admin.ModelAdmin):
     list_display = ('store_name', 'title', 'headline', 'support_hours', 'whatsapp_number', 'updated_at')
     readonly_fields = ('large_cover_preview', 'updated_at')
     fieldsets = (

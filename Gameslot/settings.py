@@ -29,10 +29,11 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = os.getenv(
-    "CSRF_TRUSTED_ORIGINS",
-    ""
-).split(",")
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")
+    if origin.strip()
+]
 
 
 # Application definition
@@ -82,11 +83,13 @@ WSGI_APPLICATION = 'Gameslot.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+DATABASE_URL = os.getenv('DATABASE_URL')
+
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL'),
+        default=DATABASE_URL or f'sqlite:///{BASE_DIR / "db.sqlite3"}',
         conn_max_age=600,
-        ssl_require=True,
+        ssl_require=bool(DATABASE_URL),
     )
 }
 
