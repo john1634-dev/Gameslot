@@ -151,6 +151,8 @@ AWS_S3_ENDPOINT_URL = "https://qdvnpaowvygrcpjutzxq.supabase.co/storage/v1/s3"
 AWS_S3_REGION_NAME = "ap-southeast-2"
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 AWS_S3_ADDRESSING_STYLE = "path"
+AWS_S3_CUSTOM_DOMAIN = f"{SUPABASE_PROJECT_REF}.supabase.co/storage/v1/object/public/{SUPABASE_STORAGE_BUCKET}"
+AWS_S3_URL_PROTOCOL = "https:"
 AWS_QUERYSTRING_AUTH = False
 AWS_DEFAULT_ACL = None
 
