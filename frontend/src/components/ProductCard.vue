@@ -24,7 +24,7 @@ const whatsappUrl = `https://wa.me/${props.whatsappNumber}?text=${message}`
   <article class="listing-card">
     <div
       class="listing-art"
-      :style="product.coverImage ? { backgroundImage: `url(${product.coverImage})` } : undefined"
+      :style="product.imageUrl ? { backgroundImage: `url(${product.imageUrl})` } : undefined"
       aria-hidden="true"
     >
       <span class="availability-dot">{{ product.status }}</span>

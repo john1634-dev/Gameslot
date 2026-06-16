@@ -35,7 +35,7 @@ def serialize_product(request, product):
         'accountLevel': product.account_level,
         'summary': product.summary,
         'deliveryNote': product.delivery_note,
-        'coverImage': image_url(request, product.cover_image),
+        'coverImage': image_url(request, product.cover_image) if product.cover_image else product.image_url,
     }
 
 

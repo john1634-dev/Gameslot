@@ -24,6 +24,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
+    image_url = models.URLField(blank=True, null=True)
     title = models.CharField(max_length=160)
     slug = models.SlugField(max_length=180, unique=True)
     price = models.CharField(max_length=60)

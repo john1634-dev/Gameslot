@@ -40,7 +40,7 @@ class CategoryAdmin(admin.ModelAdmin):
     actions = (publish_items, unpublish_items)
     fieldsets = (
         ('Category', {'fields': ('name', 'slug', 'badge', 'subtitle', 'description')}),
-        ('Frontend Cover', {'fields': ('cover_image', 'large_cover_preview')}),
+        ('Frontend Cover', {'fields': ('image_url')}),
         ('Publishing', {'fields': ('is_active', 'sort_order')}),
         ('Dates', {'fields': ('created_at', 'updated_at'), 'classes': ('collapse',)}),
     )
