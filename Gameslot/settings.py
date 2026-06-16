@@ -143,4 +143,4 @@ CLOUDINARY_STORAGE = {
     'API_KEY': '612175746344179',
     'API_SECRET': 'pyfo6dRtnfG6gR_GleZqZRoJDVE',
 }
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
