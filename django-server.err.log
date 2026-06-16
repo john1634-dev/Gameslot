@@ -298,3 +298,10 @@
 [16/Jun/2026 17:25:35] "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
 [16/Jun/2026 17:25:35] "GET /media/categories/wwm.png HTTP/1.1" 404 179
 [16/Jun/2026 17:25:35] "GET /static/admin/simpleui-x/elementui/theme-chalk/fonts/element-icons.woff HTTP/1.1" 304 0
+[16/Jun/2026 17:25:41] "GET / HTTP/1.1" 200 606
+[16/Jun/2026 17:25:41] "GET /api/home/ HTTP/1.1" 200 4388
+[16/Jun/2026 17:25:41] "GET /media/site/banner.png HTTP/1.1" 404 179
+[16/Jun/2026 17:25:41] "GET /media/categories/ww.png HTTP/1.1" 404 179
+[16/Jun/2026 17:25:41] "GET /media/categories/wwm.png HTTP/1.1" 404 179
+[16/Jun/2026 17:25:41] "GET /media/categories/zzz.png HTTP/1.1" 404 179
+[16/Jun/2026 17:25:41] "GET /media/categories/genshin.png HTTP/1.1" 404 179
