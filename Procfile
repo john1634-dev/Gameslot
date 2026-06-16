@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn Gameslot.wsgi:application
+web: gunicorn Gameslot.wsgi:application
