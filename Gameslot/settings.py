@@ -141,20 +141,23 @@ SIMPLEUI_LOGO = '/static/frontend/favicon.svg'
 SUPABASE_PROJECT_REF = "qdvnpaowvygrcpjutzxq"
 SUPABASE_STORAGE_BUCKET = "media"
 
-AWS_ACCESS_KEY_ID = os.getenv("c2e72cb06bf079b25b1becdb1197dfd4")
-AWS_SECRET_ACCESS_KEY = os.getenv("e4ef9b139fee999daf31acf5a6b56e878851e0361991d9864fa78fbff5fa7f73")
+AWS_ACCESS_KEY_ID = "c2e72cb06bf079b25b1becdb1197dfd4"
+AWS_SECRET_ACCESS_KEY = "e4ef9b139fee999daf31acf5a6b56e878851e0361991d9864fa78fbff5fa7f73"
+
 AWS_STORAGE_BUCKET_NAME = SUPABASE_STORAGE_BUCKET
-AWS_S3_ENDPOINT_URL = os.getenv(
-    "SUPABASE_S3_ENDPOINT_URL",
-    "https://qdvnpaowvygrcpjutzxq.supabase.co/storage/v1/s3"
-)
-AWS_S3_REGION_NAME = os.getenv("SUPABASE_S3_REGION_NAME", "ap-southeast-2")
+
+AWS_S3_ENDPOINT_URL = "https://qdvnpaowvygrcpjutzxq.supabase.co/storage/v1/s3"
+
+AWS_S3_REGION_NAME = "ap-southeast-2"
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 AWS_S3_ADDRESSING_STYLE = "path"
 AWS_QUERYSTRING_AUTH = False
 AWS_DEFAULT_ACL = None
 
-MEDIA_URL = f"https://{SUPABASE_PROJECT_REF}.supabase.co/storage/v1/object/public/{SUPABASE_STORAGE_BUCKET}/"
+MEDIA_URL = (
+    f"https://{SUPABASE_PROJECT_REF}.supabase.co/"
+    f"storage/v1/object/public/{SUPABASE_STORAGE_BUCKET}/"
+)
 
 STORAGES = {
     "default": {
