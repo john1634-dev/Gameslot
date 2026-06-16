@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --noinput && gunicorn Gameslot.wsgi:application
+web: python manage.py collectstatic --noinput && python manage.py migrate && gunicorn Gameslot.wsgi:application
