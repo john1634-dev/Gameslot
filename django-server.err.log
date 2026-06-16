@@ -1,8 +1,37 @@
-[15/Jun/2026 22:26:03] "GET / HTTP/1.1" 200 606
-[15/Jun/2026 22:26:03,730] - Broken pipe from ('127.0.0.1', 59417)
-[15/Jun/2026 22:26:16] "GET /?v=mobile-height-final HTTP/1.1" 200 606
-[15/Jun/2026 22:26:16] "GET /static/frontend/assets/main-XfnMJTbY.js HTTP/1.1" 200 4061
-[15/Jun/2026 22:26:16] "GET /static/frontend/assets/SiteHeader-YHlrcHw0.css HTTP/1.1" 200 13697
-[15/Jun/2026 22:26:16] "GET /static/frontend/assets/SiteHeader-DBfIIBhG.js HTTP/1.1" 200 65648
-[15/Jun/2026 22:26:16] "GET /api/home/ HTTP/1.1" 200 3947
-[15/Jun/2026 22:26:16] "GET /media/site/banner.png HTTP/1.1" 404 179
+[16/Jun/2026 13:50:30] "GET / HTTP/1.1" 200 606
+[16/Jun/2026 13:50:30,531] - Broken pipe from ('127.0.0.1', 55816)
+[16/Jun/2026 13:50:30] "GET /admin/ HTTP/1.1" 302 0
+[16/Jun/2026 13:50:30] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4364
+[16/Jun/2026 13:50:30] "GET /api/home/ HTTP/1.1" 200 3947
+[16/Jun/2026 13:50:30,626] - Broken pipe from ('127.0.0.1', 55818)
+[16/Jun/2026 13:50:30,635] - Broken pipe from ('127.0.0.1', 55819)
+[16/Jun/2026 13:50:40] "GET / HTTP/1.1" 200 606
+[16/Jun/2026 13:50:40] "GET /static/frontend/assets/SiteHeader-YHlrcHw0.css HTTP/1.1" 304 0
+[16/Jun/2026 13:50:40] "GET /static/frontend/assets/main-XfnMJTbY.js HTTP/1.1" 304 0
+[16/Jun/2026 13:50:40] "GET /static/frontend/assets/SiteHeader-DBfIIBhG.js HTTP/1.1" 304 0
+[16/Jun/2026 13:50:40] "GET /static/frontend/gameslot-logo-header.png HTTP/1.1" 304 0
+[16/Jun/2026 13:50:40] "GET /api/home/ HTTP/1.1" 200 3947
+[16/Jun/2026 13:50:40] "GET /static/frontend/anime-store-hero.png HTTP/1.1" 304 0
+[16/Jun/2026 13:50:40] "GET /media/site/banner.png HTTP/1.1" 404 179
+[16/Jun/2026 13:50:40] "GET /media/categories/genshin.png HTTP/1.1" 404 179
+[16/Jun/2026 13:50:40] "GET /media/categories/zzz.png HTTP/1.1" 404 179
+[16/Jun/2026 13:50:40] "GET /media/categories/honkai.png HTTP/1.1" 404 179
+[16/Jun/2026 13:50:40] "GET /media/categories/ww.png HTTP/1.1" 404 179
+[16/Jun/2026 13:50:40] "GET /media/categories/wwm.png HTTP/1.1" 404 179
+[16/Jun/2026 13:50:40] "GET / HTTP/1.1" 200 606
+[16/Jun/2026 13:50:40] "GET /static/frontend/assets/SiteHeader-YHlrcHw0.css HTTP/1.1" 200 13697
+[16/Jun/2026 13:50:40] "GET /admin HTTP/1.1" 301 0
+[16/Jun/2026 13:50:40] "GET /admin/login?next=/admin/ HTTP/1.1" 302 0
+[16/Jun/2026 13:50:40] "GET /admin/auth/user HTTP/1.1" 302 0
+[16/Jun/2026 13:50:40] "GET /admin/login/?next=/admin/login%3Fnext%3D/admin/ HTTP/1.1" 200 4404
+[16/Jun/2026 13:50:40] "GET /admin HTTP/1.1" 301 0
+[16/Jun/2026 13:50:40] "GET /admin/login/?next=/admin/auth/user HTTP/1.1" 200 4382
+[16/Jun/2026 13:50:40] "GET /admin/ HTTP/1.1" 302 0
+[16/Jun/2026 13:50:40] "GET / HTTP/1.1" 200 606
+[16/Jun/2026 13:50:40] "GET /products HTTP/1.1" 404 179
+[16/Jun/2026 13:50:40] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4364
+[16/Jun/2026 13:50:40] "GET /admin HTTP/1.1" 301 0
+[16/Jun/2026 13:50:40] "GET /admin/ HTTP/1.1" 302 0
+[16/Jun/2026 13:50:40] "GET /admin/ HTTP/1.1" 302 0
+[16/Jun/2026 13:50:40] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4364
+[16/Jun/2026 13:50:40] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4364
