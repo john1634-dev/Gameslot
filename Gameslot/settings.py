@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
 ]
 
@@ -135,3 +137,10 @@ SIMPLEUI_ANALYSIS = False
 SIMPLEUI_DEFAULT_THEME = 'admin.lte.css'
 SIMPLEUI_HOME_ACTION = False
 SIMPLEUI_LOGO = '/static/frontend/favicon.svg'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+}
