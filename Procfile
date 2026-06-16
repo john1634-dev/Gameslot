@@ -1,1 +1,1 @@
-web: gunicorn Gameslot.wsgi:application
+web: python manage.py collectstatic --noinput && gunicorn Gameslot.wsgi:application
