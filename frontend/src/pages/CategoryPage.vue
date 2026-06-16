@@ -59,7 +59,10 @@ onMounted(async () => {
       </div>
       <div
         class="category-cover"
-        :style="category.coverImage ? { backgroundImage: `url(${category.coverImage})` } : undefined"
+        :style="{
+          '--accent': category.accentColor || '#ff8ebb',
+          ...(category.coverImage ? { backgroundImage: `url(${category.coverImage})` } : {}),
+        }"
         aria-hidden="true"
       ></div>
     </section>

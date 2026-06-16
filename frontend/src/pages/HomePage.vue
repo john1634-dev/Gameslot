@@ -10,6 +10,7 @@ const site = ref({
   description: 'Starter accounts, VIP collections, and reroll picks refreshed for anime game players.',
   coverImage: '',
   announcement: 'Fresh accounts are reviewed and updated regularly.',
+  supportHours: 'Daily support',
   whatsappNumber: '60102431634',
 })
 const categories = ref([])
@@ -26,6 +27,8 @@ const filteredListings = computed(() => {
       .some((value) => value.toLowerCase().includes(query)),
   )
 })
+
+const totalStock = computed(() => categories.value.reduce((sum, category) => sum + Number(category.stock || 0), 0))
 
 onMounted(async () => {
   try {
@@ -64,6 +67,21 @@ onMounted(async () => {
       </aside>
     </section>
 
+    <section class="stats-strip" aria-label="Store highlights">
+      <div>
+        <strong>{{ categories.length }}</strong>
+        <span>Game categories</span>
+      </div>
+      <div>
+        <strong>{{ totalStock }}</strong>
+        <span>Active accounts</span>
+      </div>
+      <div>
+        <strong>{{ site.supportHours }}</strong>
+        <span>Support window</span>
+      </div>
+    </section>
+
     <section class="preview-section" aria-label="Account categories">
       <div class="section-heading">
         <div class="section-label-row">
@@ -82,7 +100,12 @@ onMounted(async () => {
           :href="`/categories/${category.slug}/`"
           class="category-tile"
           :class="{ 'category-tile-featured': index === 0 }"
-          :style="category.coverImage ? { backgroundImage: `linear-gradient(180deg, rgba(13, 15, 25, 0.2), rgba(13, 15, 25, 0.92)), url(${category.coverImage})` } : undefined"
+          :style="{
+            '--accent': category.accentColor || '#ff8ebb',
+            ...(category.coverImage
+              ? { backgroundImage: `linear-gradient(180deg, rgba(13, 15, 25, 0.2), rgba(13, 15, 25, 0.92)), url(${category.coverImage})` }
+              : {}),
+          }"
         >
           <div class="category-topline">
             <span class="category-number">{{ String(index + 1).padStart(2, '0') }}</span>

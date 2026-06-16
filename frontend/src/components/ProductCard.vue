@@ -24,10 +24,14 @@ const whatsappUrl = `https://wa.me/${props.whatsappNumber}?text=${message}`
   <article class="listing-card">
     <div
       class="listing-art"
-      :style="product.imageUrl ? { backgroundImage: `url(${product.imageUrl})` } : undefined"
+      :style="product.coverImage ? { backgroundImage: `url(${product.coverImage})` } : undefined"
       aria-hidden="true"
     >
       <span class="availability-dot">{{ product.status }}</span>
+      <div v-if="product.isHot || product.isNew" class="product-badges">
+        <span v-if="product.isHot">Hot</span>
+        <span v-if="product.isNew">New</span>
+      </div>
     </div>
 
     <a
@@ -54,7 +58,7 @@ const whatsappUrl = `https://wa.me/${props.whatsappNumber}?text=${message}`
     </div>
 
     <div class="listing-price">
-      <span>Price</span>
+      <span>{{ product.stockNote || 'Ready stock' }}</span>
       <strong>{{ product.price }}</strong>
     </div>
 

@@ -8,6 +8,8 @@ class Category(models.Model):
     subtitle = models.CharField(max_length=120, blank=True)
     description = models.TextField(blank=True)
     cover_image = models.ImageField(upload_to='categories/', blank=True, null=True)
+    image_url = models.URLField(blank=True, default='')
+    accent_color = models.CharField(max_length=24, blank=True, default='#ff8ebb')
     is_active = models.BooleanField(default=True)
     sort_order = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -38,7 +40,10 @@ class Product(models.Model):
         default='Direct WhatsApp handover after payment confirmation.',
     )
     cover_image = models.ImageField(upload_to='products/', blank=True, null=True)
+    stock_note = models.CharField(max_length=80, blank=True, default='Ready stock')
     is_featured = models.BooleanField(default=False)
+    is_hot = models.BooleanField(default=False)
+    is_new = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     sort_order = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -61,11 +66,13 @@ class SiteSetting(models.Model):
         default='Starter accounts, VIP collections, and reroll picks refreshed for anime game players.'
     )
     cover_image = models.ImageField(upload_to='site/', blank=True, null=True)
+    image_url = models.URLField(blank=True, default='')
     announcement = models.CharField(
         max_length=160,
         blank=True,
         default='Fresh accounts are reviewed and updated regularly.',
     )
+    support_hours = models.CharField(max_length=80, blank=True, default='Daily support')
     whatsapp_number = models.CharField(max_length=24, default='60102431634')
     updated_at = models.DateTimeField(auto_now=True)
 
